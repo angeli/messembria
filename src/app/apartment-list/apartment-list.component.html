@@ -1,8 +1,3 @@
-<div id="apartment-list">
-  <div class="apartment" *ngFor="let apartament of apartments">
-    <div>{{apartament.guest?.name}} {{apartament.guest?.family}}</div>
-    <div>{{apartament.id}}</div>
-    <div>{{apartament.status}}</div>
-
-  </div>
-</div>
+<section id="apartment-list">
+  <app-apartment *ngFor="let apartment of apartments" [apartment]="apartment"></app-apartment>
+</section>

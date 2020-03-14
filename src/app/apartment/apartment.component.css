@@ -1,0 +1,51 @@
+.apartment {
+  width: 300px;
+  min-height: 150px;
+  display: inline-block;
+  border: 1px solid #e5e5e5;
+  margin-right: 5px;
+  margin-top: 5px;
+}
+
+.cell {
+  display: inline-block;
+  width: 48%;
+  margin: 5px 0;
+}
+
+.cell-left {
+  text-align: right;
+  border-right: 1px solid #e5e5e5;
+  padding-right: 5px;
+}
+
+.cell-right {
+  text-align: left;
+  padding-left: 5px;
+}
+
+.busy {
+  background-color: #ff6c54;
+}
+
+.free {
+  background-color: #4c802b;
+}
+
+mat-card-subtitle {
+  display: inline-block;
+}
+
+mat-card-title {
+
+}
+
+.badge {
+  display: inline-block;
+  float: right;
+  min-width: 1em; /* em unit */
+  padding: .3em; /* em unit */
+  border-radius: 50%;
+  text-align: center;
+}
+

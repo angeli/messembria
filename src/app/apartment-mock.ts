@@ -37,4 +37,18 @@ export const APARTMENTS: DashboardApartment[] = [
     dates: null,
     status: ApartmentStatus.free
   },
+  {
+    id: 17,
+    guest: {name: 'Maura', family: 'Oldbuck'},
+    people: 1,
+    dates: {start: new Date('2020-03-10 12:00:00'), end: new Date('2020-03-24 12:00:00')},
+    status: ApartmentStatus.busy
+  },
+  {
+    id: 18,
+    guest: {name: 'Tomba', family: 'Brockhouse'},
+    people: 1,
+    dates: {start: new Date('2020-03-10 12:00:00'), end: new Date('2020-03-24 12:00:00')},
+    status: ApartmentStatus.busy
+  },
 ];

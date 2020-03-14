@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {DashboardApartment} from '../dashboard-apartment';
 
 @Component({
   selector: 'app-apartment',
@@ -7,7 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ApartmentComponent implements OnInit {
 
-  constructor() { }
+  @Input() apartment: DashboardApartment;
+
+  constructor() {
+  }
 
   ngOnInit(): void {
   }
