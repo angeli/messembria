@@ -22,6 +22,7 @@ import {MatCardModule} from '@angular/material/card';
 import {MatInputModule} from '@angular/material/input';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {ReservationComponent} from './reservation/reservation.component';
+import {FormsModule} from '@angular/forms';
 
 
 @NgModule({
@@ -43,7 +44,8 @@ import {ReservationComponent} from './reservation/reservation.component';
     MatTabsModule,
     MatCardModule,
     MatInputModule,
-    MatTooltipModule
+    MatTooltipModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
