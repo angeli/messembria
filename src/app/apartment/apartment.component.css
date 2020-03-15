@@ -2,34 +2,23 @@
   width: 300px;
   min-height: 150px;
   display: inline-block;
-  border: 1px solid #e5e5e5;
+  /*border: 1px solid #e5e5e5;*/
   margin-right: 5px;
   margin-top: 5px;
 }
 
-.cell {
-  display: inline-block;
-  width: 48%;
-  margin: 5px 0;
-}
-
-.cell-left {
-  text-align: right;
-  border-right: 1px solid #e5e5e5;
-  padding-right: 5px;
-}
-
-.cell-right {
-  text-align: left;
-  padding-left: 5px;
+.apartment:hover {
+  background-color: rgba(222, 222, 222, 0.1);
 }
 
 .busy {
-  background-color: #ff6c54;
+  background-color: #df0000;
+  color: #ffffff;
 }
 
 .free {
-  background-color: #4c802b;
+  background-color: #2a5800;
+  color: #ffffff;
 }
 
 mat-card-subtitle {
@@ -40,12 +29,48 @@ mat-card-title {
 
 }
 
+.date {
+  font-size: 13px;
+}
+
 .badge {
   display: inline-block;
   float: right;
+  min-height: 1em; /* em unit */
   min-width: 1em; /* em unit */
-  padding: .3em; /* em unit */
+  padding: 0.5em; /* em unit */
+  line-height: 1em;
   border-radius: 50%;
   text-align: center;
+  margin-top: -0.5em;
 }
 
+mat-card-footer {
+  text-align: center;
+  width: 100%;
+  position: absolute;
+  bottom: 1em;
+}
+
+mat-card-footer a {
+  display: inline-block;
+  width: 100%;
+  line-height: 1em;
+}
+
+mat-card-footer a:hover {
+  background-color: rgba(222, 222, 222, 0.5);
+}
+
+mat-card-footer i {
+  border: solid rgba(0, 0, 0, 0.5);
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+
+.free-apartment {
+  color: #2a5800;
+}

@@ -1,20 +1,23 @@
 <mat-card class="apartment">
   <mat-card-title>
-    <mat-card-subtitle>{{apartment.guest?.name}} {{apartment.guest?.family}}</mat-card-subtitle>
+    <mat-card-subtitle *ngIf="apartment.guest">{{apartment.guest.name}} {{apartment.guest.family}}</mat-card-subtitle>
+    <mat-card-subtitle *ngIf="!apartment.guest" class="free-apartment">Свободен</mat-card-subtitle>
     <span class="badge" [ngClass]="apartment.status">{{apartment.id}}</span>
   </mat-card-title>
 
 
   <mat-card-content>
-    <mat-form-field class="" *ngIf="apartment.dates">
+
+    <mat-form-field class="date" *ngIf="apartment.dates">
       <mat-label color="primary">Настаняване</mat-label>
       <input matInput readonly="readonly"
              value="{{apartment.dates?.start | date:'E, d MMM yy H:mm': undefined:'bg-BG'}}">
     </mat-form-field>
-    <mat-form-field class="" *ngIf="apartment.dates">
+    <mat-form-field class="date" *ngIf="apartment.dates">
       <mat-label>Напускане</mat-label>
       <input matInput readonly="readonly" value="{{apartment.dates?.end | date:'E, d MMM yy H:mm': undefined:'bg-BG'}}">
     </mat-form-field>
 
+    <mat-card-footer><a href="javascript:;" matTooltip="Детайли"><i></i></a></mat-card-footer>
   </mat-card-content>
 </mat-card>

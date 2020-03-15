@@ -3,6 +3,15 @@
     <mat-tab label="Табло">
       <app-apartment-list></app-apartment-list>
     </mat-tab>
-    <mat-tab label="Детайли"></mat-tab>
+    <mat-tab label="Детайли">
+      <ng-template matTabContent>
+        Content 2 - Loaded: {{getTimeLoaded(2) | date:'medium'}}
+      </ng-template>
+    </mat-tab>
+    <mat-tab label="Резервация">
+      <ng-template matTabContent>
+        <app-reservation></app-reservation>
+      </ng-template>
+    </mat-tab>
   </mat-tab-group>
 </section>

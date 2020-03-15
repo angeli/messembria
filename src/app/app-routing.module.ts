@@ -5,9 +5,6 @@ import { ApartmentDetailsComponent } from './apartment-details/apartment-details
 
 
 const routes: Routes = [
-  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
-  {path: 'dashboard', component: DashboardComponent},
-  {path: 'apartment-details', component: ApartmentDetailsComponent}
 ];
 
 @NgModule({

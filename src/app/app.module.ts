@@ -20,6 +20,8 @@ registerLocaleData(localeBg, 'bg-BG');
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatCardModule} from '@angular/material/card';
 import {MatInputModule} from '@angular/material/input';
+import {MatTooltipModule} from '@angular/material/tooltip';
+import {ReservationComponent} from './reservation/reservation.component';
 
 
 @NgModule({
@@ -32,6 +34,7 @@ import {MatInputModule} from '@angular/material/input';
     RoomDetailsComponent,
     ApartmentDetailsComponent,
     ApartmentListComponent,
+    ReservationComponent,
   ],
   imports: [
     BrowserModule,
@@ -39,7 +42,8 @@ import {MatInputModule} from '@angular/material/input';
     BrowserAnimationsModule,
     MatTabsModule,
     MatCardModule,
-    MatInputModule
+    MatInputModule,
+    MatTooltipModule
   ],
   providers: [],
   bootstrap: [AppComponent]
