@@ -9,7 +9,7 @@ import {DetailsService} from '../details.service';
 })
 export class NavigationComponent implements OnInit {
 
-  selected = new FormControl(0);
+  selected = new FormControl(2);
 
   constructor(private detailsService: DetailsService) {
     detailsService.stream$.subscribe(apartment => {

@@ -1,1 +1,55 @@
-<p>reservation works!</p>
+<mat-horizontal-stepper #stepper>
+  <mat-step [stepControl]="roomDates">
+    <form [formGroup]="roomDates">
+      <ng-template matStepLabel>Дати и № на апартамент</ng-template>
+      <mat-form-field>
+        <mat-label>Name</mat-label>
+        <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
+      </mat-form-field>
+      <div>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="guestNames">
+
+    <form [formGroup]="guestNames">
+      <ng-template matStepLabel>Гости</ng-template>
+
+      <section class="guests" *ngFor="let guest of guests; let first = first; let index = index;">
+        <button *ngIf="!first" mat-button (click)="removeGuest(index)">-</button>
+        <mat-form-field class="guest">
+          <mat-label>Име</mat-label>
+          <input matInput value="{{guest.name}}"/>
+        </mat-form-field>
+        <mat-form-field class="guest">
+          <mat-label>Фамилия</mat-label>
+          <input matInput value="{{guest.family}}"/>
+        </mat-form-field>
+
+      </section>
+
+      <button mat-button (click)="addGuest()">+</button>
+
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+
+  </mat-step>
+  <mat-step>
+    <ng-template matStepLabel>Done</ng-template>
+    <p>You are now done.</p>
+    <div>
+      <button mat-button matStepperPrevious>Back</button>
+      <button mat-button (click)="stepper.reset()">Reset</button>
+    </div>
+  </mat-step>
+
+</mat-horizontal-stepper>
+
+
+
+
+

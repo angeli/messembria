@@ -1,9 +1,20 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+
+import {registerLocaleData} from '@angular/common';
+import localeBg from '@angular/common/locales/bg';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+
+import {MatTabsModule} from '@angular/material/tabs';
+import {MatCardModule} from '@angular/material/card';
+import {MatInputModule} from '@angular/material/input';
+import {MatTooltipModule} from '@angular/material/tooltip';
+import {MatStepperModule} from '@angular/material/stepper';
 
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+
 import {NavigationComponent} from './navigation/navigation.component';
 import {DashboardComponent} from './dashboard/dashboard.component';
 import {ApartmentComponent} from './apartment/apartment.component';
@@ -11,20 +22,12 @@ import {ReservationDetailsComponent} from './reservation-details/reservation-det
 import {RoomDetailsComponent} from './room-details/room-details.component';
 import {ApartmentDetailsComponent} from './apartment-details/apartment-details.component';
 import {ApartmentListComponent} from './apartment-list/apartment-list.component';
+import {ReservationComponent} from './reservation/reservation.component';
+import {DetailsComponent} from './details/details.component';
+import {MatButtonModule} from '@angular/material/button';
 
-import {registerLocaleData} from '@angular/common';
-import localeBg from '@angular/common/locales/bg';
 
 registerLocaleData(localeBg, 'bg-BG');
-
-import {MatTabsModule} from '@angular/material/tabs';
-import {MatCardModule} from '@angular/material/card';
-import {MatInputModule} from '@angular/material/input';
-import {MatTooltipModule} from '@angular/material/tooltip';
-import {ReservationComponent} from './reservation/reservation.component';
-import {FormsModule} from '@angular/forms';
-import {DetailsComponent} from './details/details.component';
-
 
 @NgModule({
   declarations: [
@@ -47,7 +50,10 @@ import {DetailsComponent} from './details/details.component';
     MatCardModule,
     MatInputModule,
     MatTooltipModule,
-    FormsModule
+    FormsModule,
+    MatButtonModule,
+    MatStepperModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
