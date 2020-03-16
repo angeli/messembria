@@ -59,6 +59,7 @@ mat-card-footer a {
 }
 
 mat-card-footer a:hover {
+  cursor: pointer;
   background-color: rgba(222, 222, 222, 0.5);
 }
 
