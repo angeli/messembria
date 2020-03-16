@@ -9,15 +9,16 @@
   <mat-card-content>
 
     <mat-form-field class="date" *ngIf="apartment.dates">
-      <mat-label color="primary">Настаняване</mat-label>
+      <mat-label>Настаняване</mat-label>
       <input matInput readonly="readonly"
              value="{{apartment.dates?.start | date:'E, d MMM yy H:mm': undefined:'bg-BG'}}">
     </mat-form-field>
     <mat-form-field class="date" *ngIf="apartment.dates">
       <mat-label>Напускане</mat-label>
-      <input matInput readonly="readonly" value="{{apartment.dates?.end | date:'E, d MMM yy H:mm': undefined:'bg-BG'}}">
+      <input matInput readonly="readonly"
+             value="{{apartment.dates?.end | date:'E, d MMM yy H:mm': undefined:'bg-BG'}}">
     </mat-form-field>
 
-    <mat-card-footer><a href="javascript:;" matTooltip="Детайли"><i></i></a></mat-card-footer>
+    <mat-card-footer><a href="javascript;" (click)="goToDetails()" matTooltip="Детайли"><i></i></a></mat-card-footer>
   </mat-card-content>
 </mat-card>

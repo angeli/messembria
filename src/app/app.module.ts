@@ -23,6 +23,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {ReservationComponent} from './reservation/reservation.component';
 import {FormsModule} from '@angular/forms';
+import {DetailsComponent} from './details/details.component';
 
 
 @NgModule({
@@ -36,6 +37,7 @@ import {FormsModule} from '@angular/forms';
     ApartmentDetailsComponent,
     ApartmentListComponent,
     ReservationComponent,
+    DetailsComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {FormControl} from '@angular/forms';
+import {DetailsService} from '../details.service';
 
 @Component({
   selector: 'app-navigation',
@@ -7,24 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavigationComponent implements OnInit {
 
-  selectedTab: 0;
-  tabLoadTimes: Date[] = [];
+  selected = new FormControl(0);
 
-  getTimeLoaded(index: number) {
-    if (!this.tabLoadTimes[index]) {
-      this.tabLoadTimes[index] = new Date();
-    }
-
-    return this.tabLoadTimes[index];
-  }
-
-  constructor() {
-  }
-
-  tabClick(event) {
-    this.selectedTab = event.index;
-    console.log(event);
-    console.log('Index:', this.selectedTab);
+  constructor(private detailsService: DetailsService) {
+    detailsService.stream$.subscribe(apartment => {
+      console.log('Showing:', apartment);
+      console.log(this);
+      this.selected.setValue(1);
+    });
   }
 
   ngOnInit(): void {

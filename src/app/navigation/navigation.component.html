@@ -1,12 +1,10 @@
 <section>
-  <mat-tab-group (selectedTabChange)="tabClick($event)">
+  <mat-tab-group [selectedIndex]="selected.value" (selectedIndexChange)="selected.setValue($event)">
     <mat-tab label="Табло">
       <app-apartment-list></app-apartment-list>
     </mat-tab>
     <mat-tab label="Детайли">
-      <ng-template matTabContent>
-        Content 2 - Loaded: {{getTimeLoaded(2) | date:'medium'}}
-      </ng-template>
+      <app-details></app-details>
     </mat-tab>
     <mat-tab label="Резервация">
       <ng-template matTabContent>
