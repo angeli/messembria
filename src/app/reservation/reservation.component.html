@@ -1,37 +1,69 @@
 <mat-horizontal-stepper #stepper>
-  <mat-step [stepControl]="roomDates">
-    <form [formGroup]="roomDates">
-      <ng-template matStepLabel>Дати и № на апартамент</ng-template>
+  <mat-step [stepControl]="apartmentAndDates">
+    <form [formGroup]="apartmentAndDates">
+      <ng-template matStepLabel>Дати и апартамент</ng-template>
+
       <mat-form-field>
-        <mat-label>Name</mat-label>
-        <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
+        <mat-label>№ на апартамент</mat-label>
+        <mat-select formControlName="apartmentNum">
+          <mat-option [value]="1">1</mat-option>
+          <mat-option [value]="2">2</mat-option>
+          <mat-option [value]="3">3</mat-option>
+        </mat-select>
       </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Настаняване</mat-label>
+        <input matInput [matDatepicker]="checkIn" formControlName="checkIn">
+        <mat-datepicker-toggle matSuffix [for]="checkIn"></mat-datepicker-toggle>
+        <mat-datepicker #checkIn disabled="false"></mat-datepicker>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Напускане</mat-label>
+        <input matInput [matDatepicker]="checkOut" formControlName="checkOut">
+        <mat-datepicker-toggle matSuffix [for]="checkOut"></mat-datepicker-toggle>
+        <mat-datepicker #checkOut disabled="false"></mat-datepicker>
+      </mat-form-field>
+
       <div>
         <button mat-button matStepperNext>Next</button>
       </div>
     </form>
   </mat-step>
-  <mat-step [stepControl]="guestNames">
+  <mat-step>
 
-    <form [formGroup]="guestNames">
+    <form>
       <ng-template matStepLabel>Гости</ng-template>
+      <section id="guests-container">
+        <mat-card class="guests" *ngFor="let guest of guests; let first = first; let index = index;">
+          <mat-card-header>Гост</mat-card-header>
 
-      <section class="guests" *ngFor="let guest of guests; let first = first; let index = index;">
-        <button *ngIf="!first" mat-button (click)="removeGuest(index)">-</button>
-        <mat-form-field class="guest">
-          <mat-label>Име</mat-label>
-          <input matInput value="{{guest.name}}"/>
-        </mat-form-field>
-        <mat-form-field class="guest">
-          <mat-label>Фамилия</mat-label>
-          <input matInput value="{{guest.family}}"/>
-        </mat-form-field>
+          <mat-card-content>
+            <mat-form-field class="guest">
+              <mat-label>Име</mat-label>
+              <input matInput value="{{guest.name}}"/>
+            </mat-form-field>
+            <mat-form-field class="guest">
+              <mat-label>Фамилия</mat-label>
+              <input matInput value="{{guest.family}}"/>
+            </mat-form-field>
+          </mat-card-content>
 
+          <mat-card-footer>
+            <button *ngIf="!first" mat-button (click)="removeGuest(index)">
+              <mat-icon color="warn">remove</mat-icon>
+              премахни
+            </button>
+          </mat-card-footer>
+        </mat-card>
       </section>
 
-      <button mat-button (click)="addGuest()">+</button>
 
       <div>
+        <button mat-button (click)="addGuest()">
+          <mat-icon color="primary">add</mat-icon>
+        </button>
         <button mat-button matStepperPrevious>Back</button>
         <button mat-button matStepperNext>Next</button>
       </div>

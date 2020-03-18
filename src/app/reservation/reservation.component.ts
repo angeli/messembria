@@ -9,8 +9,8 @@ import {Guest} from '../guest';
 })
 export class ReservationComponent implements OnInit {
 
-  roomDates: FormGroup;
-  guestNames: FormGroup;
+  apartmentAndDates: FormGroup;
+  // guestNames: FormGroup;
 
   guests: Guest[] = [{name: '', family: ''}];
 
@@ -18,8 +18,10 @@ export class ReservationComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.roomDates = this.formBuilder.group({
-      firstCtrl: ['', Validators.required]
+    this.apartmentAndDates = this.formBuilder.group({
+      checkIn: [{disabled: true}, Validators.required],
+      checkOut: [{disabled: true}, Validators.required],
+      apartmentNum: ['', Validators.required]
     });
   }
 

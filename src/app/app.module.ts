@@ -25,6 +25,10 @@ import {ApartmentListComponent} from './apartment-list/apartment-list.component'
 import {ReservationComponent} from './reservation/reservation.component';
 import {DetailsComponent} from './details/details.component';
 import {MatButtonModule} from '@angular/material/button';
+import {MatIconModule} from '@angular/material/icon';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatNativeDateModule} from '@angular/material/core';
+import {MatSelectModule} from '@angular/material/select';
 
 
 registerLocaleData(localeBg, 'bg-BG');
@@ -53,7 +57,11 @@ registerLocaleData(localeBg, 'bg-BG');
     FormsModule,
     MatButtonModule,
     MatStepperModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatIconModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]
