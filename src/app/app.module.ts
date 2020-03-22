@@ -11,9 +11,19 @@ import {MatCardModule} from '@angular/material/card';
 import {MatInputModule} from '@angular/material/input';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatStepperModule} from '@angular/material/stepper';
+import {MatButtonModule} from '@angular/material/button';
+import {MatIconModule} from '@angular/material/icon';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatNativeDateModule} from '@angular/material/core';
+import {MatSelectModule} from '@angular/material/select';
+import {GuestsComponent} from './guests/guests.component';
 
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
+
+import {HttpClientModule} from '@angular/common/http';
+import {HttpClientInMemoryWebApiModule} from 'angular-in-memory-web-api';
+import {InMemoryDataService} from './in-memory-data.service';
 
 import {NavigationComponent} from './navigation/navigation.component';
 import {DashboardComponent} from './dashboard/dashboard.component';
@@ -24,11 +34,7 @@ import {ApartmentDetailsComponent} from './apartment-details/apartment-details.c
 import {ApartmentListComponent} from './apartment-list/apartment-list.component';
 import {ReservationComponent} from './reservation/reservation.component';
 import {DetailsComponent} from './details/details.component';
-import {MatButtonModule} from '@angular/material/button';
-import {MatIconModule} from '@angular/material/icon';
-import {MatDatepickerModule} from '@angular/material/datepicker';
-import {MatNativeDateModule} from '@angular/material/core';
-import {MatSelectModule} from '@angular/material/select';
+
 
 
 registerLocaleData(localeBg, 'bg-BG');
@@ -45,11 +51,19 @@ registerLocaleData(localeBg, 'bg-BG');
     ApartmentListComponent,
     ReservationComponent,
     DetailsComponent,
+    GuestsComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    HttpClientModule,
+    // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
+    // and returns simulated server responses.
+    // Remove it when a real server is ready to receive requests.
+    HttpClientInMemoryWebApiModule.forRoot(
+      InMemoryDataService, {dataEncapsulation: false}
+    ),
     MatTabsModule,
     MatCardModule,
     MatInputModule,

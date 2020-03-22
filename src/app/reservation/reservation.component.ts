@@ -12,8 +12,6 @@ export class ReservationComponent implements OnInit {
   apartmentAndDates: FormGroup;
   // guestNames: FormGroup;
 
-  guests: Guest[] = [{name: '', family: ''}];
-
   constructor(private formBuilder: FormBuilder) {
   }
 
@@ -24,13 +22,4 @@ export class ReservationComponent implements OnInit {
       apartmentNum: ['', Validators.required]
     });
   }
-
-  addGuest() {
-    this.guests.push({name: '', family: ''});
-  }
-
-  removeGuest(index) {
-    this.guests.splice(index, 1);
-  }
-
 }

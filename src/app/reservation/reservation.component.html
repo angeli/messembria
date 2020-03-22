@@ -14,14 +14,14 @@
 
       <mat-form-field>
         <mat-label>Настаняване</mat-label>
-        <input matInput [matDatepicker]="checkIn" formControlName="checkIn">
+        <input matInput [matDatepicker]="checkIn" formControlName="checkIn" label="check in">
         <mat-datepicker-toggle matSuffix [for]="checkIn"></mat-datepicker-toggle>
         <mat-datepicker #checkIn disabled="false"></mat-datepicker>
       </mat-form-field>
 
       <mat-form-field>
         <mat-label>Напускане</mat-label>
-        <input matInput [matDatepicker]="checkOut" formControlName="checkOut">
+        <input matInput [matDatepicker]="checkOut" formControlName="checkOut" label="check out">
         <mat-datepicker-toggle matSuffix [for]="checkOut"></mat-datepicker-toggle>
         <mat-datepicker #checkOut disabled="false"></mat-datepicker>
       </mat-form-field>
@@ -35,35 +35,8 @@
 
     <form>
       <ng-template matStepLabel>Гости</ng-template>
-      <section id="guests-container">
-        <mat-card class="guests" *ngFor="let guest of guests; let first = first; let index = index;">
-          <mat-card-header>Гост</mat-card-header>
-
-          <mat-card-content>
-            <mat-form-field class="guest">
-              <mat-label>Име</mat-label>
-              <input matInput value="{{guest.name}}"/>
-            </mat-form-field>
-            <mat-form-field class="guest">
-              <mat-label>Фамилия</mat-label>
-              <input matInput value="{{guest.family}}"/>
-            </mat-form-field>
-          </mat-card-content>
-
-          <mat-card-footer>
-            <button *ngIf="!first" mat-button (click)="removeGuest(index)">
-              <mat-icon color="warn">remove</mat-icon>
-              премахни
-            </button>
-          </mat-card-footer>
-        </mat-card>
-      </section>
-
-
+      <app-guests></app-guests>
       <div>
-        <button mat-button (click)="addGuest()">
-          <mat-icon color="primary">add</mat-icon>
-        </button>
         <button mat-button matStepperPrevious>Back</button>
         <button mat-button matStepperNext>Next</button>
       </div>

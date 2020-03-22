@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { APARTMENTS } from '../apartment-mock';
 import {DashboardApartment} from '../dashboard-apartment';
+import {ApartmentsService} from '../apartments.service';
 
 @Component({
   selector: 'app-apartment-list',
@@ -11,10 +11,16 @@ export class ApartmentListComponent implements OnInit {
 
   apartments: DashboardApartment[];
 
-  constructor() { }
+  constructor(private apartmentsService: ApartmentsService) {
+  }
 
   ngOnInit(): void {
-    this.apartments = APARTMENTS;
+    this.getHeroes();
+  }
+
+  getHeroes(): void {
+    this.apartmentsService.all()
+      .subscribe(apartments => this.apartments = apartments);
   }
 
 }

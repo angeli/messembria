@@ -1,0 +1,33 @@
+.guest {
+  width: 50%;
+  display: block;
+}
+
+#guests-container {
+  margin-top: 2%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.guests {
+  width: 45%;
+  margin-bottom: 5px;
+  display: inline-block;
+}
+
+.guests mat-card-content {
+  padding: 5px 5px 5px 4%;
+}
+
+.guests:nth-child(even) {
+  margin-left: 1%;
+}
+
+.mat-form-field {
+  margin-top: 16px;
+}
+
+mat-card-footer {
+  min-height: 36px;
+}
