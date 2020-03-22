@@ -1,30 +1,11 @@
-<section>
-  <mat-tab-group [selectedIndex]="selected.value" (selectedIndexChange)="selected.setValue($event)">
-    <mat-tab label="Табло">
-      <app-apartment-list></app-apartment-list>
-    </mat-tab>
-    <mat-tab label="Детайли">
-      <app-details></app-details>
-    </mat-tab>
-    <mat-tab label="Резервация">
-      <ng-template matTabContent>
-        <app-reservation></app-reservation>
-      </ng-template>
-    </mat-tab>
-    <mat-tab label="Календар">
-      <ng-template matTabContent>
-        todo
-      </ng-template>
-    </mat-tab>
-    <mat-tab label="Справки">
-      <ng-template matTabContent>
-        todo
-      </ng-template>
-    </mat-tab>
-    <mat-tab label="Админ">
-      <ng-template matTabContent>
-        todo
-      </ng-template>
-    </mat-tab>
-  </mat-tab-group>
-</section>
+<nav mat-tab-nav-bar>
+  <a mat-tab-link
+     *ngFor="let link of navLinks"
+     [routerLink]="link.path"
+     routerLinkActive #rla="routerLinkActive"
+     [active]="rla.isActive">
+    {{link.label}}
+  </a>
+</nav>
+
+<router-outlet></router-outlet>

@@ -1,6 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import {FormControl} from '@angular/forms';
-import {DetailsService} from '../details.service';
 
 @Component({
   selector: 'app-navigation',
@@ -9,14 +7,16 @@ import {DetailsService} from '../details.service';
 })
 export class NavigationComponent implements OnInit {
 
-  selected = new FormControl(2);
+  navLinks = [
+    {path: 'dashboard', label: 'Табло'},
+    {path: 'details/0', label: 'Детайли'},
+    {path: 'reservation', label: 'Резервация'},
+    {path: 'calendar', label: 'Календар'},
+    {path: 'report', label: 'Справки'},
+    {path: 'admin', label: 'Админ'},
+  ];
 
-  constructor(private detailsService: DetailsService) {
-    detailsService.stream$.subscribe(apartment => {
-      console.log('Showing:', apartment);
-      console.log(this);
-      this.selected.setValue(1);
-    });
+  constructor() {
   }
 
   ngOnInit(): void {
