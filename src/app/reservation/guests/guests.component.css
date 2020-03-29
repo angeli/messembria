@@ -1,0 +1,39 @@
+#guests-container {
+  margin-top: 2em;
+}
+
+#guests {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  flex-direction: column;
+}
+
+.guests {
+  width: 90%;
+  margin-bottom: 0.5em;
+}
+
+.guests mat-card-header div {
+  margin-left: 30px;
+}
+
+.name {
+  margin-left: 30px;
+  width: 20%;
+}
+
+.remove {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.add {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+
+

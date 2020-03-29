@@ -16,7 +16,10 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material/core';
 import {MatSelectModule} from '@angular/material/select';
-import {GuestsComponent} from './guests/guests.component';
+
+import {ReservationComponent} from './reservation/reservation.component';
+import {GuestsComponent} from './reservation/guests/guests.component';
+import {ApartmentDatesComponent} from './reservation/apartment-dates/apartment-dates.component';
 
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
@@ -32,9 +35,10 @@ import {ReservationDetailsComponent} from './reservation-details/reservation-det
 import {RoomDetailsComponent} from './room-details/room-details.component';
 import {ApartmentDetailsComponent} from './apartment-details/apartment-details.component';
 import {ApartmentListComponent} from './apartment-list/apartment-list.component';
-import {ReservationComponent} from './reservation/reservation.component';
-import {DetailsComponent} from './details/details.component';
 
+import {DetailsComponent} from './details/details.component';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import {PaymentComponent} from './reservation/payment/payment.component';
 
 
 registerLocaleData(localeBg, 'bg-BG');
@@ -52,6 +56,8 @@ registerLocaleData(localeBg, 'bg-BG');
     ReservationComponent,
     DetailsComponent,
     GuestsComponent,
+    PaymentComponent,
+    ApartmentDatesComponent,
   ],
   imports: [
     BrowserModule,
@@ -75,7 +81,8 @@ registerLocaleData(localeBg, 'bg-BG');
     MatIconModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatSelectModule
+    MatSelectModule,
+    MatSlideToggleModule
   ],
   providers: [],
   bootstrap: [AppComponent]

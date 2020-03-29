@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {Guest} from '../guest';
+import {ApartmentsService} from '../apartments.service';
 
 @Component({
   selector: 'app-reservation',
@@ -17,8 +18,8 @@ export class ReservationComponent implements OnInit {
 
   ngOnInit(): void {
     this.apartmentAndDates = this.formBuilder.group({
-      checkIn: [{disabled: true}, Validators.required],
-      checkOut: [{disabled: true}, Validators.required],
+      checkIn: [, Validators.required],
+      checkOut: [, Validators.required],
       apartmentNum: ['', Validators.required]
     });
   }

@@ -1,35 +1,7 @@
 <mat-horizontal-stepper #stepper>
   <mat-step [stepControl]="apartmentAndDates">
-    <form [formGroup]="apartmentAndDates">
-      <ng-template matStepLabel>Дати и апартамент</ng-template>
-
-      <mat-form-field>
-        <mat-label>№ на апартамент</mat-label>
-        <mat-select formControlName="apartmentNum">
-          <mat-option [value]="1">1</mat-option>
-          <mat-option [value]="2">2</mat-option>
-          <mat-option [value]="3">3</mat-option>
-        </mat-select>
-      </mat-form-field>
-
-      <mat-form-field>
-        <mat-label>Настаняване</mat-label>
-        <input matInput [matDatepicker]="checkIn" formControlName="checkIn" label="check in">
-        <mat-datepicker-toggle matSuffix [for]="checkIn"></mat-datepicker-toggle>
-        <mat-datepicker #checkIn disabled="false"></mat-datepicker>
-      </mat-form-field>
-
-      <mat-form-field>
-        <mat-label>Напускане</mat-label>
-        <input matInput [matDatepicker]="checkOut" formControlName="checkOut" label="check out">
-        <mat-datepicker-toggle matSuffix [for]="checkOut"></mat-datepicker-toggle>
-        <mat-datepicker #checkOut disabled="false"></mat-datepicker>
-      </mat-form-field>
-
-      <div>
-        <button mat-button matStepperNext>Next</button>
-      </div>
-    </form>
+    <ng-template matStepLabel>Дати и апартамент</ng-template>
+    <app-apartment-dates></app-apartment-dates>
   </mat-step>
   <mat-step>
 
@@ -45,6 +17,11 @@
   </mat-step>
   <mat-step>
     <ng-template matStepLabel>Плащане</ng-template>
+    <app-payment></app-payment>
+  </mat-step>
+
+  <mat-step>
+    <ng-template matStepLabel>Екстра</ng-template>
   </mat-step>
   <mat-step>
     <ng-template matStepLabel>Done</ng-template>

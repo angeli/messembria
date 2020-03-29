@@ -1,0 +1,27 @@
+<mat-card id="guests-container">
+  <mat-card-header></mat-card-header>
+  <mat-card-content id="guests">
+    <button mat-button (click)="addGuest()" class="add">
+      <mat-icon color="primary">add</mat-icon>
+    </button>
+    <mat-card class="guests" *ngFor="let guest of guests; let first = first; let index = index;">
+      <mat-card-header>Гост</mat-card-header>
+      <mat-card-content>
+        <mat-form-field class="name">
+          <mat-label>Име</mat-label>
+          <input matInput value="{{guest.name}}" label="name"/>
+        </mat-form-field>
+        <mat-form-field class="name">
+          <mat-label>Фамилия</mat-label>
+          <input matInput value="{{guest.family}}" label="family"/>
+        </mat-form-field>
+
+        <button *ngIf="!first" mat-button (click)="removeGuest(index)" class="remove">
+          <mat-icon color="warn">remove</mat-icon>
+        </button>
+      </mat-card-content>
+    </mat-card>
+  </mat-card-content>
+</mat-card>
+
+

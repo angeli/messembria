@@ -15,10 +15,10 @@ export class ApartmentListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.getHeroes();
+    this.getApartments();
   }
 
-  getHeroes(): void {
+  getApartments(): void {
     this.apartmentsService.all()
       .subscribe(apartments => this.apartments = apartments);
   }

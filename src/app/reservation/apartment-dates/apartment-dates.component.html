@@ -1,0 +1,26 @@
+<mat-card>
+  <mat-card-header></mat-card-header>
+  <mat-card-content id="ap-dates">
+    <mat-form-field>
+      <mat-label>№ на апартамент</mat-label>
+      <mat-select formControlName="apartmentNum">
+        <mat-option *ngFor="let id of ids" [value]="id">{{id}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Настаняване</mat-label>
+      <input matInput [matDatepicker]="checkIn" disabled formControlName="checkIn" label="check in">
+      <mat-datepicker-toggle matSuffix [for]="checkIn"></mat-datepicker-toggle>
+      <mat-datepicker #checkIn disabled="false"></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Напускане</mat-label>
+      <input matInput [matDatepicker]="checkOut" disabled formControlName="checkOut" label="check out">
+      <mat-datepicker-toggle matSuffix [for]="checkOut"></mat-datepicker-toggle>
+      <mat-datepicker #checkOut disabled="false"></mat-datepicker>
+    </mat-form-field>
+
+  </mat-card-content>
+</mat-card>

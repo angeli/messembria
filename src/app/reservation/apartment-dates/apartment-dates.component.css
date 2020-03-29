@@ -1,0 +1,12 @@
+#ap-dates {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 2em 0;
+}
+
+#ap-dates mat-form-field {
+  width: 25%;
+  margin-right: 1%;
+}
