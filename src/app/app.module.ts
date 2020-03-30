@@ -39,6 +39,7 @@ import {ApartmentListComponent} from './apartment-list/apartment-list.component'
 import {DetailsComponent} from './details/details.component';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {PaymentComponent} from './reservation/payment/payment.component';
+import {ExtraComponent} from './reservation/extra/extra.component';
 
 
 registerLocaleData(localeBg, 'bg-BG');
@@ -58,6 +59,7 @@ registerLocaleData(localeBg, 'bg-BG');
     GuestsComponent,
     PaymentComponent,
     ApartmentDatesComponent,
+    ExtraComponent,
   ],
   imports: [
     BrowserModule,

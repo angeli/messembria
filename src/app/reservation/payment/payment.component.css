@@ -1,14 +1,14 @@
 #payment {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
-  padding: 2em 0;
+  padding: 2em 0 2em 5em;
   flex-direction: column;
   min-height: 100px;
+  width: 20%;
 }
 
 mat-slide-toggle {
-  margin-bottom: 1%;
+  margin-bottom: 2em;
 
 }
 

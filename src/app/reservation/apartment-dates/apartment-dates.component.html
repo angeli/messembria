@@ -9,6 +9,13 @@
     </mat-form-field>
 
     <mat-form-field>
+      <mat-label>Пристигане</mat-label>
+      <input matInput [matDatepicker]="arrival" disabled formControlName="arrival" label="check in">
+      <mat-datepicker-toggle matSuffix [for]="arrival"></mat-datepicker-toggle>
+      <mat-datepicker #arrival disabled="false"></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field>
       <mat-label>Настаняване</mat-label>
       <input matInput [matDatepicker]="checkIn" disabled formControlName="checkIn" label="check in">
       <mat-datepicker-toggle matSuffix [for]="checkIn"></mat-datepicker-toggle>
