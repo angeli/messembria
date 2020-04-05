@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {ApartmentsService} from '../../apartments.service';
+import {ReservationService} from '../../reservation.service';
 
 @Component({
   selector: 'app-apartment-dates',
@@ -9,7 +10,7 @@ import {ApartmentsService} from '../../apartments.service';
 export class ApartmentDatesComponent implements OnInit {
   ids: number[];
 
-  constructor(private apartmentsService: ApartmentsService) {
+  constructor(private apartmentsService: ApartmentsService, public reservationService: ReservationService) {
   }
 
   ngOnInit(): void {

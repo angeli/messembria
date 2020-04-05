@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {PaymentType} from '../../payment-type.enum';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {FormBuilder, FormGroup} from '@angular/forms';
+import {ReservationService} from '../../reservation.service';
 
 @Component({
   selector: 'app-payment',
@@ -13,7 +14,7 @@ export class PaymentComponent implements OnInit {
 
   paymentGrp: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private formBuilder: FormBuilder, public reservationService: ReservationService) {
   }
 
   ngOnInit(): void {
@@ -25,6 +26,7 @@ export class PaymentComponent implements OnInit {
   change(event: any): void {
     this.slider = event.checked;
     console.log(event.checked);
+    console.log(this.reservationService);
   }
 
 }

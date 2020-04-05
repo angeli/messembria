@@ -3,28 +3,28 @@
   <mat-card-content id="ap-dates">
     <mat-form-field>
       <mat-label>№ на апартамент</mat-label>
-      <mat-select formControlName="apartmentNum">
+      <mat-select [(ngModel)]="reservationService.apartment">
         <mat-option *ngFor="let id of ids" [value]="id">{{id}}</mat-option>
       </mat-select>
     </mat-form-field>
 
     <mat-form-field>
       <mat-label>Пристигане</mat-label>
-      <input matInput [matDatepicker]="arrival" disabled formControlName="arrival" label="check in">
+      <input matInput [matDatepicker]="arrival" disabled label="check in" [(ngModel)]="reservationService.arrival">
       <mat-datepicker-toggle matSuffix [for]="arrival"></mat-datepicker-toggle>
       <mat-datepicker #arrival disabled="false"></mat-datepicker>
     </mat-form-field>
 
     <mat-form-field>
       <mat-label>Настаняване</mat-label>
-      <input matInput [matDatepicker]="checkIn" disabled formControlName="checkIn" label="check in">
+      <input matInput [matDatepicker]="checkIn" disabled label="check in" [(ngModel)]="reservationService.checkIn">
       <mat-datepicker-toggle matSuffix [for]="checkIn"></mat-datepicker-toggle>
       <mat-datepicker #checkIn disabled="false"></mat-datepicker>
     </mat-form-field>
 
     <mat-form-field>
       <mat-label>Напускане</mat-label>
-      <input matInput [matDatepicker]="checkOut" disabled formControlName="checkOut" label="check out">
+      <input matInput [matDatepicker]="checkOut" disabled label="check out" [(ngModel)]="reservationService.checkOut">
       <mat-datepicker-toggle matSuffix [for]="checkOut"></mat-datepicker-toggle>
       <mat-datepicker #checkOut disabled="false"></mat-datepicker>
     </mat-form-field>

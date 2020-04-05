@@ -1,5 +1,5 @@
 <mat-horizontal-stepper #stepper>
-  <mat-step [stepControl]="apartmentAndDates">
+  <mat-step>
     <ng-template matStepLabel>Дати и апартамент</ng-template>
     <app-apartment-dates></app-apartment-dates>
   </mat-step>
@@ -26,7 +26,15 @@
   </mat-step>
   <mat-step>
     <ng-template matStepLabel>Done</ng-template>
-    <p>You are now done.</p>
+    <p>Apartment: {{reservationService.apartment}}</p>
+    <p>Arrival: {{reservationService.arrival | date:'E, d MMM yy H:mm': undefined:'bg-BG'}}</p>
+    <p>Check In: {{reservationService.checkIn | date:'E, d MMM yy H:mm': undefined:'bg-BG'}}</p>
+    <p>Check out: {{reservationService.checkOut | date:'E, d MMM yy H:mm': undefined:'bg-BG'}}</p>
+    <p *ngFor="let guest in reservationService.guests">Guest: {{guest.name}} {{guest.family}}</p>
+    <p>Paid: {{reservationService.payment.paid}}</p>
+    <p>Payment Type: {{reservationService.payment.type}}</p>
+    <p>Who: {{reservationService.who}}</p>
+    <p>Extra: {{reservationService.extra}}</p>
     <div>
       <button mat-button matStepperPrevious>Back</button>
       <button mat-button (click)="stepper.reset()">Reset</button>

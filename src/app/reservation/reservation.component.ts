@@ -1,7 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
-import {Guest} from '../guest';
-import {ApartmentsService} from '../apartments.service';
+import {ReservationService} from '../reservation.service';
 
 @Component({
   selector: 'app-reservation',
@@ -10,17 +8,9 @@ import {ApartmentsService} from '../apartments.service';
 })
 export class ReservationComponent implements OnInit {
 
-  apartmentAndDates: FormGroup;
-  // guestNames: FormGroup;
-
-  constructor(private formBuilder: FormBuilder) {
+  constructor(public reservationService: ReservationService) {
   }
 
   ngOnInit(): void {
-    this.apartmentAndDates = this.formBuilder.group({
-      checkIn: [, Validators.required],
-      checkOut: [, Validators.required],
-      apartmentNum: ['', Validators.required]
-    });
   }
 }

@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Guest} from '../../guest';
+import {ReservationService} from '../../reservation.service';
 
 @Component({
   selector: 'app-guests',
@@ -10,19 +11,19 @@ export class GuestsComponent implements OnInit {
 
   guests: Guest[] = [{name: '', family: ''}];
 
-  constructor() {
+  constructor(public reservationService: ReservationService) {
   }
 
   ngOnInit(): void {
   }
 
   addGuest() {
-    this.guests.push({name: '', family: ''});
+    this.reservationService.guests.push({name: '', family: ''});
   }
 
   removeGuest(index) {
     // @todo ask for confirmation if the guest is not empty
 
-    this.guests.splice(index, 1);
+    this.reservationService.guests.splice(index, 1);
   }
 }

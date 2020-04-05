@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {ReservationService} from '../../reservation.service';
 
 @Component({
   selector: 'app-extra',
@@ -7,7 +8,7 @@ import {Component, OnInit} from '@angular/core';
 })
 export class ExtraComponent implements OnInit {
 
-  constructor() {
+  constructor(public reservationService: ReservationService) {
   }
 
   ngOnInit(): void {
