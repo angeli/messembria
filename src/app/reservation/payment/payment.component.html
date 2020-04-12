@@ -6,6 +6,11 @@
     </mat-slide-toggle>
 
     <mat-form-field *ngIf="slider">
+      <mat-label>Сума</mat-label>
+      <input matInput [(ngModel)]="reservationService.payment.amount" label="сума"/>
+    </mat-form-field>
+
+    <mat-form-field *ngIf="slider">
       <mat-label>Тип</mat-label>
       <mat-select [(ngModel)]="reservationService.payment.type">
         <mat-option *ngFor="let pt of paymentType | keyvalue" [value]="pt.key">{{pt.value}}</mat-option>

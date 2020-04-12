@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {DashboardApartment} from '../dashboard-apartment';
-import {ApartmentsService} from '../apartments.service';
+import {ApartmentService} from '../apartment.service';
 import {ActivatedRoute} from '@angular/router';
 
 @Component({
@@ -12,7 +12,7 @@ export class DetailsComponent implements OnInit {
 
   public apartment: DashboardApartment;
 
-  constructor(private apartmentsService: ApartmentsService, private route: ActivatedRoute) {
+  constructor(private apartmentsService: ApartmentService, private route: ActivatedRoute) {
   }
 
   ngOnInit(): void {

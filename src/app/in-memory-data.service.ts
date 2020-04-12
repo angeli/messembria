@@ -1,65 +1,38 @@
 import {Injectable} from '@angular/core';
-import {DashboardApartment} from './dashboard-apartment';
-import {ApartmentStatus} from './apartment-status.enum';
 
 @Injectable({
   providedIn: 'root'
 })
 export class InMemoryDataService {
   createDb() {
-    const apartments: DashboardApartment[] = [
-      {
-        id: 12,
-        guest: {name: 'Jason', family: 'Vincent'},
-        people: 2,
-        dates: {start: new Date('2020-03-13 12:00:00'), end: new Date('2020-03-20 12:00:00')},
-        status: ApartmentStatus.busy
-      },
-      {
-        id: 13,
-        guest: {name: 'Cristina', family: 'Masten'},
-        people: 3,
-        dates: {start: new Date('2020-03-13 12:00:00'), end: new Date('2020-03-20 12:00:00')},
-        status: ApartmentStatus.busy
-      },
-      {
-        id: 14,
-        guest: null,
-        people: null,
-        dates: null,
-        status: ApartmentStatus.free
-      },
-      {
-        id: 15,
-        guest: {name: 'Dinodas', family: 'Diggle'},
-        people: 4,
-        dates: {start: new Date('2020-03-10 12:00:00'), end: new Date('2020-03-24 12:00:00')},
-        status: ApartmentStatus.busy
-      },
-      {
-        id: 16,
-        guest: null,
-        people: null,
-        dates: null,
-        status: ApartmentStatus.free
-      },
-      {
-        id: 17,
-        guest: {name: 'Maura', family: 'Oldbuck'},
-        people: 1,
-        dates: {start: new Date('2020-03-10 12:00:00'), end: new Date('2020-03-24 12:00:00')},
-        status: ApartmentStatus.busy
-      },
-      {
-        id: 18,
-        guest: {name: 'Tomba', family: 'Brockhouse'},
-        people: 1,
-        dates: {start: new Date('2020-03-10 12:00:00'), end: new Date('2020-03-24 12:00:00')},
-        status: ApartmentStatus.busy
-      },
+    const apartments = [
+      {id: 12, people: 2},
+      {id: 13, people: 3},
+      {id: 14, people: 2},
+      {id: 15, people: 4},
+      {id: 16, people: 3},
+      {id: 17, people: 4},
+      {id: 18, people: 2},
     ];
 
-    return {apartments};
+    const guests = [
+      {id: 1, name: 'Jason', family: 'Vincent', apartments_id: 12},
+      {id: 2, name: 'Cristina', family: 'Masten', apartments_id: 13},
+      {id: 3, name: 'Dinodas', family: 'Diggle', apartments_id: 15},
+      {id: 4, name: 'Maura', family: 'Oldbuck', apartments_id: 17},
+      {id: 5, name: 'Tomba', family: 'Brockhouse', apartments_id: 18},
+    ];
+
+
+    const bookings = [
+      {id: 1, guests_id: 1, apartments_id: 12, start: new Date('2020-04-13 12:00:00'), end: new Date('2020-04-20 12:00:00')},
+      {id: 2, guests_id: 2, apartments_id: 13, start: new Date('2020-04-13 12:00:00'), end: new Date('2020-04-20 12:00:00')},
+      {id: 3, guests_id: 3, apartments_id: 15, start: new Date('2020-04-10 12:00:00'), end: new Date('2020-04-24 12:00:00')},
+      {id: 4, guests_id: 4, apartments_id: 17, start: new Date('2020-04-10 12:00:00'), end: new Date('2020-04-24 12:00:00')},
+      {id: 5, guests_id: 5, apartments_id: 18, start: new Date('2020-04-10 12:00:00'), end: new Date('2020-04-24 12:00:00')},
+    ];
+
+    return {apartments, guests, bookings};
   }
 
 }

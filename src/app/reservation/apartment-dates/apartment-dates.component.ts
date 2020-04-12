@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {ApartmentsService} from '../../apartments.service';
+import {ApartmentService} from '../../apartment.service';
 import {ReservationService} from '../../reservation.service';
 
 @Component({
@@ -10,7 +10,7 @@ import {ReservationService} from '../../reservation.service';
 export class ApartmentDatesComponent implements OnInit {
   ids: number[];
 
-  constructor(private apartmentsService: ApartmentsService, public reservationService: ReservationService) {
+  constructor(private apartmentsService: ApartmentService, public reservationService: ReservationService) {
   }
 
   ngOnInit(): void {

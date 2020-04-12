@@ -18,7 +18,8 @@ export class ReservationService {
   }];
   payment: Payment = {
     paid: false,
-    type: PaymentType.unknown
+    type: PaymentType.unknown,
+    amount: 0
   };
   who: string;
   extra: string;

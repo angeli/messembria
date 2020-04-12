@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {DashboardApartment} from '../dashboard-apartment';
-import {ApartmentsService} from '../apartments.service';
+import {ApartmentService} from '../apartment.service';
 
 @Component({
   selector: 'app-apartment-list',
@@ -11,7 +11,7 @@ export class ApartmentListComponent implements OnInit {
 
   apartments: DashboardApartment[];
 
-  constructor(private apartmentsService: ApartmentsService) {
+  constructor(private apartmentsService: ApartmentService) {
   }
 
   ngOnInit(): void {

@@ -33,6 +33,7 @@
     <p *ngFor="let guest in reservationService.guests">Guest: {{guest.name}} {{guest.family}}</p>
     <p>Paid: {{reservationService.payment.paid}}</p>
     <p>Payment Type: {{reservationService.payment.type}}</p>
+    <p>Amount: {{reservationService.payment.amount}}</p>
     <p>Who: {{reservationService.who}}</p>
     <p>Extra: {{reservationService.extra}}</p>
     <div>
