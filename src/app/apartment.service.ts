@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {HttpHeaders} from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {DashboardApartment} from './dashboard-apartment';
 import {catchError} from 'rxjs/operators';
@@ -10,12 +10,15 @@ import {RestService} from './rest.service';
 })
 export class ApartmentService extends RestService {
 
-  private url = 'api/apartments';  // URL to web api
+  protected url = 'http://msmbr.test/api/apartments';  // URL to web api
 
   httpOptions = {
     headers: new HttpHeaders({'Content-Type': 'application/json'})
   };
 
+  constructor(protected client: HttpClient) {
+    super(client);
+  }
 
   all(): Observable<DashboardApartment[]> {
     return this.client.get<DashboardApartment[]>(this.url)

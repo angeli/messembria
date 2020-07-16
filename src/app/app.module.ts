@@ -16,6 +16,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material/core';
 import {MatSelectModule} from '@angular/material/select';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 
 import {ReservationComponent} from './reservation/reservation.component';
 import {GuestsComponent} from './reservation/guests/guests.component';
@@ -25,8 +26,6 @@ import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 
 import {HttpClientModule} from '@angular/common/http';
-import {HttpClientInMemoryWebApiModule} from 'angular-in-memory-web-api';
-import {InMemoryDataService} from './in-memory-data.service';
 
 import {NavigationComponent} from './navigation/navigation.component';
 import {DashboardComponent} from './dashboard/dashboard.component';
@@ -37,7 +36,6 @@ import {ApartmentDetailsComponent} from './apartment-details/apartment-details.c
 import {ApartmentListComponent} from './apartment-list/apartment-list.component';
 
 import {DetailsComponent} from './details/details.component';
-import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {PaymentComponent} from './reservation/payment/payment.component';
 import {ExtraComponent} from './reservation/extra/extra.component';
 
@@ -66,12 +64,6 @@ registerLocaleData(localeBg, 'bg-BG');
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
-    // and returns simulated server responses.
-    // Remove it when a real server is ready to receive requests.
-    HttpClientInMemoryWebApiModule.forRoot(
-      InMemoryDataService, {dataEncapsulation: false}
-    ),
     MatTabsModule,
     MatCardModule,
     MatInputModule,
@@ -84,7 +76,7 @@ registerLocaleData(localeBg, 'bg-BG');
     MatDatepickerModule,
     MatNativeDateModule,
     MatSelectModule,
-    MatSlideToggleModule
+    MatSlideToggleModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
